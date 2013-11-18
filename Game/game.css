@@ -1,0 +1,26 @@
+body {
+	background-image:url('http://toxtown.nlm.nih.gov/text_version/print/border.jpg');
+	font-family: Arial, Verdana, sans-serif;
+	text-align: center;
+	}
+p.one{
+background-image: url('http://toxtown.nlm.nih.gov/text_version/print/farm.jpg');
+color: black;
+border-style:ridge;
+border-color:black;
+width:80%;
+height:150px;
+margin-left:auto;
+margin-right:auto;
+padding: 5px;
+}
+.body{
+background-color: black;
+color: white;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+height:500px;
+}
+
+	
