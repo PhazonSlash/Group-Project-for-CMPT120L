@@ -1,26 +1,41 @@
 body {
-	background-image:url('http://toxtown.nlm.nih.gov/text_version/print/border.jpg');
 	font-family: Arial, Verdana, sans-serif;
-	text-align: center;
+	margin: 0;
 	}
-p.one{
-background-image: url('http://toxtown.nlm.nih.gov/text_version/print/farm.jpg');
+#wrapper {
+background-color: #e8b9e8;
+width:100%;
+min-width:900px;
+}
+
+#content {
+background-image: url('pictures/topimg.jpg');
 color: black;
 border-style:ridge;
 border-color:black;
-width:80%;
-height:150px;
+width:90%;
+height:200px;
 margin-left:auto;
 margin-right:auto;
-padding: 5px;
+border-bottom: 0px;
 }
-.body{
-background-color: black;
-color: white;
-width:80%;
+#body{
+background-color: white;
+color: black;
+height:500px;
+width:90%;
 margin-left:auto;
 margin-right:auto;
-height:500px;
+border-style:ridge;
+border-color:black;
+padding: 
+}
+#map {
+float:right;
+width:420px;
+height:315px;
+margin-right: 20px;
+background-image: url('pictures/Drawing.jpg');
 }
 
 	
