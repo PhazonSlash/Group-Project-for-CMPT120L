@@ -3,6 +3,7 @@
 //object for player
 var player = {
 	name:'',
+	townName:'',
 	inventory:[], // an array of items the player has collected
 };
 
@@ -74,7 +75,7 @@ function connectLocations(){
 
 }
 
-
+//--------------------------------------------------------------------------------------------------
 //Items will be created here
 
 //Library Items
@@ -125,3 +126,17 @@ engine = new Item('Engine', 'Write a description of the engine here.', 1);
 torqueWrench = new Item('Torque Wrench', 'Write a description of the torque wrench here.', 1);
 carJack = new Item('Car Jack', 'Write a description of the car jack here.', 1);
 alternator = new Item('Alternator', 'Write a description of the alternator here.', 1);
+
+//--------------------------------------------------------------------------------------------------
+//People will be created here      Person(name, description, dialogue)
+
+//Library People
+librarian = new Person('Sally','Write a description here', 'Some dialogue here, not sure how its going to work yet.');
+
+
+
+//--------------------------------------------------------------------------------------------------
+// Locations will be created here    Location(name, description, items, people, adjacentLocations)
+
+//Leave the adjacentLocations array blank, we will have a function that will assign those.
+library = new Location('Library', 'This is the Library of ' + player.townName + '. It is filled with thousand of books, Magazines, and newspaper articles. Any information you are looking for you will find here. Take a look around and see what you can find!', [ancientBook, hiddenTreasureMap, bookOnDecipheringCode, scienceBook, mathBook], [librarian, student], []) //<---- location array blank
