@@ -1,12 +1,5 @@
 //Java functions to implement game tasks
 
-//object for player
-var player = {
-	name:'',
-	townName:'',
-	inventory:[], // an array of items the player has collected
-};
-
 //object for items
 var item = {
 	name:'',
@@ -18,7 +11,8 @@ var item = {
  inputs: 	String containing item name
 			String containing item description
 			Number containing the score value of the item
- */			
+ */	
+ 
 var Item = function(name, description, value){
 	this.name = name;
 	this.description = description;
@@ -135,54 +129,54 @@ librarian = new Person('Sally','Middle-Aged librarian', 'Welcome to the library!
 student = new Person('Student', 'Highschool Student Studying', 'Hey, how are you? This book on Math is really boring. I heard that there was a book that contains a treasure map in this library but I can not find it.');
 
 //Hotel People
-Bellboy = new Person('Bobby','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel!');
-Front Desk Help = new Person ('Mary', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here!');
+bellboy = new Person('Bobby','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel!');
+frontDeskHelp = new Person ('Mary', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here!');
 
 //Grocery Store People
-Cashier = new person ('Stephanie', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great!');
-Clerk = new person  ('John', 'Deli Manager of the grocery store. A real nice guy to talk to.', 'Hi!');
-Shopper = new person ('Mrs.Smith', 'Crazy older lady always looking for a deal on her groceries.', 'Do you work here! Aren\'t these steaks supposed to be cheaper!?!?');
+cashier = new person ('Stephanie', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great!');
+clerk = new person  ('John', 'Deli Manager of the grocery store. A real nice guy to talk to.', 'Hi!');
+shopper = new person ('Mrs.Smith', 'Crazy older lady always looking for a deal on her groceries.', 'Do you work here! Aren\'t these steaks supposed to be cheaper!?!?');
 
 //Coffee Shop People
-Employee = new person ('Ryan', 'A sweet girl, who may have had too much coffee.', 'Can you figure out what the best item in here is??');
-Hipster = new person ('Anthony', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else.');
+employee = new person ('Ryan', 'A sweet girl, who may have had too much coffee.', 'Can you figure out what the best item in here is??');
+hipster = new person ('Anthony', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else.');
 
 //Hardware Store People
-Worker = new person ('Bill', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here for any home improvement needs you have.');
-Contractor = new person ('Patrick', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'What do you think would be best for building a house?(sarcasm)');
+worker = new person ('Bill', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here for any home improvement needs you have.');
+contractor = new person ('Patrick', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'What do you think would be best for building a house?(sarcasm)');
 
 //Police Station People
-Officer = new person ('Erika', 'Police woman ready for any duty.', 'Don\'t get in trouble because I have no problem arresting you!');
-Crook = new person ('Steve', 'Bald with a big beard, who knows what he did this time to land himself in jail.', 'I didn\'t do it, I swear! Hey get those handcuff keys and help me get out of here...no ones looking!');
+officer = new person ('Erika', 'Police woman ready for any duty.', 'Don\'t get in trouble because I have no problem arresting you!');
+crook = new person ('Steve', 'Bald with a big beard, who knows what he did this time to land himself in jail.', 'I didn\'t do it, I swear! Hey get those handcuff keys and help me get out of here...no ones looking!');
 
 //Auto Shop People
-Mechanic = new person ('Mike', 'A big guy who knows everything about mechanics.', 'I love working on cars all day long. I do have a lot of items here I do not need though.');
-Customer = new person ('Erin', 'Tall lady with two kids gettting her mini-van fixed.', 'I don\'t know what is wrong with my mini-van. It won\'t start for some reason. ');
+mechanic = new person ('Mike', 'A big guy who knows everything about mechanics.', 'I love working on cars all day long. I do have a lot of items here I do not need though.');
+customer = new person ('Erin', 'Tall lady with two kids gettting her mini-van fixed.', 'I don\'t know what is wrong with my mini-van. It won\'t start for some reason. ');
 
 //--------------------------------------------------------------------------------------------------
 // Locations will be created here    Location(name, description, items, people, adjacentLocations)
 
 //Leave the adjacentLocations array blank, we will have a function that will assign those.
-Library = new Location('Library', 'This is the Library of ' + user.townName + '. It is filled with thousand of books, Magazines, and newspaper articles. Any information you are looking for you will find here. Take a look around and see what you can find!', [ancientBook, hiddenTreasureMap, bookOnDecipheringCode, scienceBook, mathBook], [librarian, student], []); //<---- location array blank
+library = new Location('Library', 'This is the Library of ' + user.townName + '. It is filled with thousand of books, Magazines, and newspaper articles. Any information you are looking for you will find here. Take a look around and see what you can find!', [ancientBook, hiddenTreasureMap, bookOnDecipheringCode, scienceBook, mathBook], [librarian, student], []); //<---- location array blank
 
-Hotel = new Location ('Hotel', 'The hotel of ' + user.townName + ' is a hundred year old building with 42 beautiful rooms for travelers, tourists, and businessmen to stay in', [roomKeySet, luggage, luggageCart, pillow, elevatorKey], [Bellboy, Front Desk Help], []);
+hotel = new Location ('Hotel', 'The hotel of ' + user.townName + ' is a hundred year old building with 42 beautiful rooms for travelers, tourists, and businessmen to stay in', [roomKeySet, luggage, luggageCart, pillow, elevatorKey], [bellboy, frontDeskHelp], []);
 
-Grocery Store = new Location ('Grocery Store', 'You will find a lot of ' + user.townName + 'residents here on the weekend shopping for their groceries. Get your freshest food and other essential groceries here all at once!', [shoppingBasket, boxOfCereal, rawSteak, priceGun, cashRegister], [Cashier, Clerk, Shopper], []);
+groceryStore = new Location ('Grocery Store', 'You will find a lot of ' + user.townName + 'residents here on the weekend shopping for their groceries. Get your freshest food and other essential groceries here all at once!', [shoppingBasket, boxOfCereal, rawSteak, priceGun, cashRegister], [cashier, clerk, shopper], []);
 
-Coffee Shop = new Location ('Coffee Shop', 'A nice little place to get any type of coffee you would like along with a little something to eat. Anyday of the year is a good time to stop in!', [hotCoffee, icedCoffee, doughnut, muffin, thermos], [Employee, Hipster], []);
+coffeeShop = new Location ('Coffee Shop', 'A nice little place to get any type of coffee you would like along with a little something to eat. Anyday of the year is a good time to stop in!', [hotCoffee, icedCoffee, doughnut, muffin, thermos], [employee, hipster], []);
 
-Hardware Store = new Location ('Hardware Store', 'With aisles and aisles of home and yard improvement items this is the perfect place to get the tool for the job. ', [hammer, screwdriver, wrench, shovel, saw], [Worker, Contractor], []);
+hardwareStore = new Location ('Hardware Store', 'With aisles and aisles of home and yard improvement items this is the perfect place to get the tool for the job. ', [hammer, screwdriver, wrench, shovel, saw], [worker, contractor], []);
 
-Police Station = new Location ('Police Station', 'You do not want to end up here in the ' + user.townName + 'Police Station. The town is not highly crime plagued but this Station has eight holding cells and twelve officers prepared for anything. ', [handcuffs, nighstick, handcuffKey, taser, policeReport], [Officer, Crook], []);
+policeStation = new Location ('Police Station', 'You do not want to end up here in the ' + user.townName + 'Police Station. The town is not highly crime plagued but this Station has eight holding cells and twelve officers prepared for anything. ', [handcuffs, nighstick, handcuffKey, taser, policeReport], [officer, crook], []);
 
-Auto Shop = new Location ('Auto Shop', 'This Auto Shop features a six bay garage with four lifts. They have everything possible to fix any vehicle. Do not go anywhere else to get your car, truck, or any other motorized vehicle fixed!', [tire, engine, torqueWrench, carJack, alternator], [Mechanic, Customer], []);
+autoShop = new Location ('Auto Shop', 'This Auto Shop features a six bay garage with four lifts. They have everything possible to fix any vehicle. Do not go anywhere else to get your car, truck, or any other motorized vehicle fixed!', [tire, engine, torqueWrench, carJack, alternator], [mechanic, customer], []);
 
 //--------------------------------------------------------------------------------------------------
 //Location where user can enter a town name and Character name
 
 function createUser ()
 {
-var user = {townname: '', character: ''};
+var user = {townname: '', character: '', inventory:[]};
 user.townname = document.getElementById('townName').value;
 user.character = document.getElementById('charName').value;
 
