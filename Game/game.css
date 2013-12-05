@@ -8,9 +8,12 @@ width:100%;
 min-width:900px;
 }
 
-#content {
+#header {
 background-image: url('pictures/topimg.jpg');
-color: black;
+color: white;
+text-align:center;
+font-size: 24pt;
+text-shadow: 5px 5px 5px #000000;
 border-style:ridge;
 border-color:black;
 width:90%;
@@ -20,22 +23,25 @@ margin-right:auto;
 border-bottom: 0px;
 }
 #body{
-background-color: white;
+background-color: #EEF3E2;
 color: black;
 height:500px;
 width:90%;
 margin-left:auto;
 margin-right:auto;
 border-style:ridge;
-border-color:black;
-padding: 
+border-color:black; 
 }
 #map {
 float:right;
-width:420px;
-height:315px;
+width:475px;
+height:356px;
 margin-right: 20px;
+border-style:ridge;
+border-color:black;
 background-image: url('pictures/Drawing.jpg');
 }
+
+	
 
 	
