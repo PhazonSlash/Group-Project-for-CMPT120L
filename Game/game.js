@@ -8,6 +8,7 @@ var currentAction = '';
 var currentSubject = '';
 var currentSubjectType = '';
 
+var maximumItems = 10;
 var endOfGame = false;
 
 //Object for user
@@ -149,33 +150,33 @@ function createItems(){
 
 function createPeople(){
 	//Library People
-	librarian = new Person('Sally','Middle-Aged librarian', 'Welcome to the library! Whatever book, magazine or newspaper you are looking for I bet you can find here.', 'librarian');
+	librarian = new Person('Sally the Librarian','Middle-Aged librarian', 'Welcome to the library! Whatever book, magazine or newspaper you are looking for I bet you can find here.', 'librarian');
 	student = new Person('Student', 'Highschool Student Studying', 'Hey, how are you? This book on Math is really boring. I heard that there was a book that contains a treasure map in this library but I can not find it.', 'student');
 
 	//Hotel People
-	bellboy = new Person('Bobby','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel!', 'bellboy');
-	frontDeskHelp = new Person ('Mary', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here!', 'desk');
+	bellboy = new Person('Bobby the Bellboy','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel!', 'bellboy');
+	frontDeskHelp = new Person ('Mary at the Front Desk', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here!', 'desk');
 
 	//Grocery Store People
-	cashier = new Person ('Stephanie', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great!', 'cashier');
-	clerk = new Person  ('John', 'Deli Manager of the grocery store. A real nice guy to talk to.', 'Hi!', 'clerk');
-	shopper = new Person ('Mrs.Smith', 'Crazy older lady always looking for a deal on her groceries.', 'Do you work here! Aren\'t these steaks supposed to be cheaper!?!?', 'shopper');
+	cashier = new Person ('Stephanie the Cashier', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great!', 'cashier');
+	clerk = new Person  ('John the Clerk', 'Deli Manager of the grocery store. A real nice guy to talk to.', 'Hi!', 'clerk');
+	shopper = new Person ('Mrs. Smith the Shopper', 'Crazy older lady always looking for a deal on her groceries.', 'Do you work here! Aren\'t these steaks supposed to be cheaper!?!?', 'shopper');
 
 	//Coffee Shop People
-	employee = new Person ('Ryan', 'A sweet girl, who may have had too much coffee.', 'Can you figure out what the best item in here is??', 'employee');
-	hipster = new Person ('Anthony', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else.', 'hipster');
+	employee = new Person ('Ryan the Employee', 'A sweet girl, who may have had too much coffee.', 'Can you figure out what the best item in here is??', 'employee');
+	hipster = new Person ('Anthony the Hipster', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else.', 'hipster');
 
 	//Hardware Store People
-	worker = new Person ('Bill', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here for any home improvement needs you have.', 'worker');
-	contractor = new Person ('Patrick', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'What do you think would be best for building a house?(sarcasm)','contractor');
+	worker = new Person ('Bill the Worker', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here for any home improvement needs you have.', 'worker');
+	contractor = new Person ('Patrick the Contractor', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'What do you think would be best for building a house?(sarcasm)','contractor');
 
 	//Police Station People
-	officer = new Person ('Erika', 'Police woman ready for any duty.', 'Don\'t get in trouble because I have no problem arresting you!', 'officer');
-	crook = new Person ('Steve', 'Bald with a big beard, who knows what he did this time to land himself in jail.', 'I didn\'t do it, I swear! Hey get those handcuff keys and help me get out of here...no ones looking!', 'crook');
+	officer = new Person ('Officer Erika', 'Police woman ready for any duty.', 'Don\'t get in trouble because I have no problem arresting you!', 'officer');
+	crook = new Person ('Steve the Crook', 'Bald with a big beard, who knows what he did this time to land himself in jail.', 'I didn\'t do it, I swear! Hey get those handcuff keys and help me get out of here...no ones looking!', 'crook');
 
 	//Auto Shop People
-	mechanic = new Person ('Mike', 'A big guy who knows everything about mechanics.', 'I love working on cars all day long. I do have a lot of items here I do not need though.', 'mechanic');
-	customer = new Person ('Erin', 'Tall lady with two kids gettting her mini-van fixed.', 'I don\'t know what is wrong with my mini-van. It won\'t start for some reason.', 'customer');
+	mechanic = new Person ('Mike the Mechanic', 'A big guy who knows everything about mechanics.', 'I love working on cars all day long. I do have a lot of items here I do not need though.', 'mechanic');
+	customer = new Person ('Erin the Customer', 'Tall lady with two kids gettting her mini-van fixed.', 'I don\'t know what is wrong with my mini-van. It won\'t start for some reason.', 'customer');
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -227,7 +228,13 @@ function pickUp(item){
 	if(!item.obtained){
 		user.inventory.splice(-1, 0, item)
 		item.obtained = true;
-		document.getElementById('outputDiv').innerHTML= 'You recieved ' + item.name + '! You put it in your inventory.';
+		document.getElementById('outputDiv').innerHTML= 'You recieved ' + item.name + '! You put it in your inventory. You now have ' + user.inventory.length + ' out of a possible ' + maximumItems + ' items in your inventory!';
+		
+		//Check to see if user meets the maximum items
+		if(user.inventory.length >= maximumItems){
+			end();
+			return;
+		}
 	}else{
 		document.getElementById('outputDiv').innerHTML= 'You already have that item!';
 	}
@@ -236,7 +243,6 @@ function pickUp(item){
 //Function to talk to someone
 function talkTo(person){
 	document.getElementById('outputDiv').innerHTML= person.dialogue;
-	
 	
 }
 
@@ -260,7 +266,17 @@ function printInventory(){
 
 //Game Over Function
 function end(){
-
+	var finalScore = 0;
+	//Calculate the final score
+	for(i = 0; i < user.inventory.length; i++){
+		finalScore = finalScore + user.inventory[i].value
+	}
+	//Hide game specific divs
+	document.getElementById('descriptionDiv').style.display='none';
+	document.getElementById('textEntryDiv').style.display='none';
+	
+	//Print Results into outputDiv
+	document.getElementById('outputDiv').innerHTML= 'Your final score based on the items you collected is ' + finalScore + '. Thanks for playing ' + user.character + '!';
 
 
 }
@@ -395,7 +411,8 @@ function mainGame(){
 			if(currentSubjectType === 'location'){
 				goTo(currentSubject);				
 			} else{
-				//print a message saying you can't go to a non location
+				
+				document.getElementById('outputDiv').innerHTML= 'How exactly do you go to ' + currentSubject.name + '?';
 			}
 			break;
 		case 'enter':
@@ -403,6 +420,7 @@ function mainGame(){
 				goTo(currentSubject);				
 			} else{
 				//print a message saying you can't go to a non location
+				document.getElementById('outputDiv').innerHTML= 'How exactly do you enter ' + currentSubject.name + '?';
 			}
 			break;
 		case 'pick':
@@ -410,6 +428,7 @@ function mainGame(){
 				pickUp(currentSubject);				
 			} else{
 				//print a message saying you can't pick up a non item
+				document.getElementById('outputDiv').innerHTML= 'How do you expect to pick up a ' + currentSubject.name + '?';
 			}
 			break;
 		case 'get':
@@ -417,6 +436,7 @@ function mainGame(){
 				pickUp(currentSubject);				
 			} else{
 				//print a message saying you can't pick up a non item
+				document.getElementById('outputDiv').innerHTML= 'How do you expect to get a ' + currentSubject.name + ' in your inventory?';
 			}
 			break;
 		case 'talk':
@@ -424,6 +444,7 @@ function mainGame(){
 				talkTo(currentSubject);				
 			} else{
 				//print a message saying you can't talk to a non person
+				document.getElementById('outputDiv').innerHTML= 'You can talk to that ' + currentSubject.name + ' all you want. It\'s not going to respond.';
 			}
 			break;
 		case 'examine':
