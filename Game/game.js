@@ -150,7 +150,7 @@ function createItems(){
 
 function createPeople(){
 	//Library People
-	librarian = new Person('Sally the Librarian','Middle-Aged librarian', 'Welcome to the library! Whatever book, magazine or newspaper you are looking for I bet you can find here. There is even a book on deciphering good and an ancient book which no one knows how old it is!', 'librarian');
+	librarian = new Person('Sally the Librarian','Middle-Aged librarian', 'Welcome to the library! Whatever book, magazine or newspaper you are looking for I bet you can find here. There is even a book on deciphering code and an ancient book which no one knows how old it is!', 'librarian');
 	student = new Person('Student', 'Highschool Student Studying', 'Hey, how are you? This book on Math and book on Science is really boring. I heard that there was a book that contains a treasure map in this library but I can not find it.', 'student');
 
 	//Hotel People
