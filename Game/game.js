@@ -2,7 +2,7 @@
 
 //variables
 var currentLocation;
-var validActions = ['go', 'enter', 'pick', 'get', 'end', 'talk', 'inventory', 'examine', 'help'];
+var validActions = ['go', 'enter', 'pick', 'exit', 'get', 'end', 'talk', 'inventory', 'examine', 'help'];
 
 var currentAction = '';
 var currentSubject = '';
@@ -225,7 +225,7 @@ function goTo(location){
 
 //Function for help
 function help(){
-document.getElementById('outputDiv').innerHTML = 'Instuctions: The town is broken up into three districts: Downtown, Shopping District, and Uptown. Each location has different buildings you can enter. The object of the game is to collect ' + maximumItems + ' items from around town. Each item has a hidden point value, harder to find items will be worth more points. Once you have reached the maximum number of items, the game will end and your score will be calculated based on the items you collected. You can interact with the game using the following commands: go to, enter, pick up, talk to, inventory, and examine. If you want to end the game early, just type the word end.';
+document.getElementById('outputDiv').innerHTML = 'Instuctions: The town is broken up into three districts: Downtown, Shopping District, and Uptown. Each location has different buildings you can enter. The object of the game is to collect ' + maximumItems + ' items from around town. Each item has a hidden point value, harder to find items will be worth more points. Once you have reached the maximum number of items, the game will end and your score will be calculated based on the items you collected. You can interact with the game using the following commands: go to, enter, exit, pick up, talk to, inventory, and examine. To get to different locations, you must specify a location that is next to your current location on the map. You cannot, for example, jump straight from Downtown to Uptown with out first going to the Shopping District. To exit a building and go back to the district you were in, type exit or just go to the district again. If you want to end the game early, just type the word end.';
 
 }
 
@@ -375,7 +375,20 @@ function mainGame(){
 		return; //leave the main function and wait for another user input
 	}
 	
-	//see if the action is help
+	
+	//see if the action is end
+	if(currentAction === 'exit'){
+		if(currentLocation.adjacentLocations.length === 1){
+			goTo(currentLocation.adjacentLocations[0]);
+		} else{
+			document.getElementById('outputDiv').innerHTML= 'You can\t exit the town like this. Type end to end the game.';
+		}
+		clear();
+		return; //leave the main function and wait for another user input
+	
+	}
+	
+	//see if the action is end
 	if(currentAction === 'end'){
 		end(); //run the help function
 		clear();
