@@ -154,8 +154,8 @@ function createPeople(){
 	student = new Person('Student', 'Highschool Student Studying', 'Hey, how are you? This book on Math and book on Science is really boring. I heard that there was a book that contains a treasure map in this library but I can not find it.', 'student');
 
 	//Hotel People
-	bellboy = new Person('Bobby the Bellboy','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel! When I am bored I twirl my room key set and ride the luggage cart through the halls. I also use my elevator key to trap other employees on the elevator as a joke, one that they don\t always find funny.', 'bellboy');
-	frontDeskHelp = new Person ('Mary at the Front Desk', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here! Any pillow of ours I guarantee is the most comfy pillow you have slept on. Just leave your luggage with us and we can bring it right to your room.', 'frontdesk');
+	bellboy = new Person('Bobby the Bellboy','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel! When I am bored I twirl my room key set or ride the luggage cart through the halls. I also use my elevator key to trap other employees on the elevator as a joke, one that they don\t always find funny.', 'bellboy');
+	frontDeskHelp = new Person ('Mary at the Front Desk', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here! Any pillow of ours I guarantee is the most comfy pillow you have slept on. Just leave your luggage with us and we can bring it right to your room.', 'desk');
 
 	//Grocery Store People
 	cashier = new Person ('Stephanie the Grocery Store Cashier', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great! I also like to play with the price gun and mark any box of cereal that I like to a cheaper price.', 'cashier');
@@ -167,7 +167,7 @@ function createPeople(){
 	hipster = new Person ('Anthony the Hipster', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else. I bring my own thermos of coffee instead of buying what they have here.', 'hipster');
 
 	//Hardware Store People
-	worker = new Person ('Bill the Hardware Store Owner', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here including a hammer, screwdriver, and wrench for any home improvement needs you have.', 'worker');
+	owner = new Person ('Bill the Hardware Store Owner', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here including a hammer, screwdriver, and wrench for any home improvement needs you have.', 'owner');
 	contractor = new Person ('Patrick the Contractor', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'Alright lets see I need a new shovel for my wife for her garden and I need a new saw because my old one is too dull now. Well at least this is the right place to get those items!','contractor');
 
 	//Police Station People
@@ -184,21 +184,21 @@ function createPeople(){
 function createLocations(){
 
 	//Uptown Areas
-	library = new Location('Library', 'This is the Library of ' + user.townName + '. It is filled with thousand of books, Magazines, and newspaper articles. Any information you are looking for you will find here. Take a look around and see what you can find!', [ancientBook, hiddenTreasureMap, bookOnDecipheringCode, scienceBook, mathBook], [librarian, student], [], 'library');
+	library = new Location('Library', 'This is the Library of ' + user.townName + '. It is filled with thousand of books, Magazines, and newspaper articles. Any information you are looking for you will find here. There is a librarian here all the time and you will usually find at least one student studying.', [ancientBook, hiddenTreasureMap, bookOnDecipheringCode, scienceBook, mathBook], [librarian, student], [], 'library');
 
-	hotel = new Location ('Hotel', 'The hotel of ' + user.townName + ' is a hundred year old building with 42 beautiful rooms for travelers, tourists, and businessmen to stay in', [roomKeySet, luggage, luggageCart, pillow, elevatorKey], [bellboy, frontDeskHelp], [], 'hotel');
+	hotel = new Location ('Hotel', 'The hotel of ' + user.townName + ' is a hundred year old building with 42 beautiful rooms for travelers, tourists, and businessmen to stay in. There is always front desk help for any needs you have and a bell boy to take care of your luggage.', [roomKeySet, luggage, luggageCart, pillow, elevatorKey], [bellboy, frontDeskHelp], [], 'hotel');
 
 	//Shopping District Areas
-	groceryStore = new Location ('Grocery Store', 'You will find a lot of ' + user.townName + ' residents here on the weekend shopping for their groceries. Get your freshest food and other essential groceries here all at once!', [shoppingBasket, boxOfCereal, rawSteak, priceGun, cashRegister], [cashier, clerk, shopper], [], 'grocery');
+	groceryStore = new Location ('Grocery Store', 'You will find a lot of ' + user.townName + ' shoppers here on the weekend getting their groceries. Any clerk or cashier will be happy to help you get your freshest food and other essential groceries here all at once!', [shoppingBasket, boxOfCereal, rawSteak, priceGun, cashRegister], [cashier, clerk, shopper], [], 'grocery');
 
-	coffeeShop = new Location ('Coffee Shop', 'A nice little place to get any type of coffee you would like along with a little something to eat. Anyday of the year is a good time to stop in!', [hotCoffee, icedCoffee, doughnut, muffin, thermos], [employee, hipster], [], 'coffee');
+	coffeeShop = new Location ('Coffee Shop', 'A nice little place to get any type of coffee you would like along with a little something to eat. There is only need for one employee but she is very good and will take care of you. Beware of the hipster that comes in everyday. Regardless anyday of the year is a good time to stop in!', [hotCoffee, icedCoffee, doughnut, muffin, thermos], [employee, hipster], [], 'coffee');
 
-	hardwareStore = new Location ('Hardware Store', 'With aisles and aisles of home and yard improvement items this is the perfect place to get the tool for the job. ', [hammer, screwdriver, wrench, shovel, saw], [worker, contractor], [], 'hardware');
+	hardwareStore = new Location ('Hardware Store', 'With aisles and aisles of home and yard improvement items this is the perfect place to get the tool for the job. The owner is a great guy and will always help you plus you will find a contractor or two that will probably be able to help you as well.', [hammer, screwdriver, wrench, shovel, saw], [owner, contractor], [], 'hardware');
 
 	//Downtown Areas
-	policeStation = new Location ('Police Station', 'You do not want to end up here in the ' + user.townName + ' Police Station. The town is not highly crime plagued but this Station has eight holding cells and twelve officers prepared for anything. ', [handcuffs, nightstick, handcuffKey, taser, policeReport], [officer, crook], [], 'police');
+	policeStation = new Location ('Police Station', 'You do not want to end up here in the ' + user.townName + ' Police Station. The town is not highly crime plagued but this Station has eight holding cells and twelve officers prepared for anything. Do not be like the crook in here now because the officer will not take it easy on you.', [handcuffs, nightstick, handcuffKey, taser, policeReport], [officer, crook], [], 'police');
 
-	autoShop = new Location ('Auto Shop', 'This Auto Shop features a six bay garage with four lifts. They have everything possible to fix any vehicle. Do not go anywhere else to get your car, truck, or any other motorized vehicle fixed!', [tire, engine, torqueWrench, carJack, alternator], [mechanic, customer], [], 'auto');
+	autoShop = new Location ('Auto Shop', 'This Auto Shop features a six bay garage with four lifts. They have everything possible to fix any vehicle. Mike the mechanic is the best just ask any customer of his! Do not go anywhere else to get your car, truck, or any other motorized vehicle fixed!', [tire, engine, torqueWrench, carJack, alternator], [mechanic, customer], [], 'auto');
 
 	//Districts
 	downtown = new Location ('Downtown', 'This is Downtown ' + user.townName + ' where you will find our lovely Police Station and Auto Shop. If you get into trouble with the law or car problems you will find yourself here. If you travel north from here, you will find yourself in the Shopping District.', [], [], [], 'downtown');

@@ -26,7 +26,7 @@ border-bottom: 0px;
 background-color: #EEF3E2;
 font-size: 18pt;
 color: black;
-height:500px;
+height:900px;
 width:90%;
 margin-left:auto;
 margin-right:auto;
@@ -34,15 +34,12 @@ border-style:ridge;
 border-color:black; 
 }
 #map {
-float:right;
-width:475px;
-height:356px;
-margin-right: 20px;
-border-style:ridge;
-border-color:black;
-background-image: url('pictures/Drawing.jpg');
+float:center;
+height: 475px;
+width:90%;
+background-color: #EEF3E2;
+
 }
 
-	
 
 	
