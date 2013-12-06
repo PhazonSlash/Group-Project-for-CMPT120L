@@ -2,7 +2,7 @@
 
 //variables
 var currentLocation;
-var validActions = ['go', 'enter', 'pick', 'get', 'talk', 'inventory', 'examine', 'help'];
+var validActions = ['go', 'enter', 'pick', 'get', 'end', 'talk', 'inventory', 'examine', 'help'];
 
 var currentAction = '';
 var currentSubject = '';
@@ -96,24 +96,24 @@ var Location = function(name, description, items, people, adjacentLocations, key
 
 function createItems(){
 	//Library Items
-	ancientBook = new Item('Ancient Book', 'Wow looks like it is a thousand years old!.', 3, 'ancient', false);
+	ancientBook = new Item('Ancient Book', 'Wow looks like it is a thousand years old!.', 4, 'ancient', false);
 	hiddenTreasureMap = new Item('Hidden Treasure Map', 'A barely decipherable looking old map.', 5, 'map');
 	bookOnDecipheringCode = new Item('Book on Deciphering Code', 'Black leather bound book. Tons of useless information on breaking codes.', 4, 'code', false);
 	scienceBook = new Item('Science Book', 'Chemistry book.', 1, 'science', false);
 	mathBook = new Item('Math Book', 'Math book on Calculus.', 1, 'math', false);
 
 	//Hotel Items
-	roomKeySet = new Item('Room Key Set', 'A huge ring with keys on it, you can access everyone room in the hotel with this key set.', 3, 'room', false);
+	roomKeySet = new Item('Room Key Set', 'A huge ring with keys on it, you can access everyone room in the hotel with this key set.', 5, 'room', false);
 	luggage = new Item('Luggage', 'A large luggage bag with wheels and Nike Backpack.', 1, 'luggage', false);
 	luggageCart = new Item('Luggage Cart', 'Big rolling luggage cart.', 1, 'cart', false);
 	pillow = new Item('Pillow', 'A real comforatble down pillow.', 1, 'pillow', false);
-	elevatorKey = new Item('Elevator Key', 'A key to turn the elevators on and off.', 3, 'elevator', false);
+	elevatorKey = new Item('Elevator Key', 'A key to turn the elevators on and off.', 4, 'elevator', false);
 
 	//Grocery Store Items
 	shoppingBasket = new Item('Shopping Basket', 'A large basket to fit whatever items you want into it.', 1, 'basket', false);
 	boxOfCereal = new Item('Box of Cereal', 'Frosted mini wheats, sounds like a good breakfast to me.', 1, 'cereal', false);
 	rawSteak = new Item('Raw Steak', 'A delicous porter house steak, find a grill so you can cook a nice meal.', 1, 'steak', false);
-	priceGun = new Item('Price Gun', 'Take this price gun and use it to mark down the prices on groceries.', 3, 'price', false);
+	priceGun = new Item('Price Gun', 'Take this price gun and use it to mark down the prices on groceries.', 4, 'price', false);
 	cashRegister = new Item('Cash Register', 'Full of money, imagine how much this is worth with all the money in it.', 5, 'register', false);
 
 	//Coffee Shop Items
@@ -132,7 +132,7 @@ function createItems(){
 
 	//Police Station Items
 	handcuffs = new Item('Handcuffs', 'This is what the officers use to detain the bad guys when arresting them.', 2, 'handcuffs', false);
-	nightstick = new Item('Nightstick', 'One of the items officers always carry with them to subdue crooks.', 3, 'nightstick', false);
+	nightstick = new Item('Nightstick', 'One of the items officers always carry with them to subdue crooks.', 4, 'nightstick', false);
 	handcuffKey = new Item('Handcuff Key', 'The key to a set of handcuffs. Hopefully you will never need this', 3, 'key', false);
 	taser = new Item('Taser', 'A very effective tool for self defense.', 5, 'taser', false);
 	policeReport = new Item('Police Report', 'This is used to put the arrested ones on file.', 1, 'report', false);
@@ -223,6 +223,12 @@ function goTo(location){
 	document.getElementById('outputDiv').innerHTML = '';
 }
 
+//Function for help
+function help(){
+document.getElementById('outputDiv').innerHTML = 'Instuctions: The town is broken up into three districts: Downtown, Shopping District, and Uptown. Each location has different buildings you can enter. The object of the game is to collect ' + maximumItems + ' items from around town. Each item has a hidden point value, harder to find items will be worth more points. Once you have reached the maximum number of items, the game will end and your score will be calculated based on the items you collected. You can interact with the game using the following commands: go to, enter, pick up, talk to, inventory, and examine. If you want to end the game early, just type the word end.';
+
+}
+
 //Function to pick up an item
 function pickUp(item){
 	if(!item.obtained){
@@ -276,7 +282,7 @@ function end(){
 	document.getElementById('textEntryDiv').style.display='none';
 	
 	//Print Results into outputDiv
-	document.getElementById('outputDiv').innerHTML= 'Your final score based on the items you collected is ' + finalScore + '. Thanks for playing ' + user.character + '!';
+	document.getElementById('outputDiv').innerHTML= 'Thank you for vistiting ' + user.townName + '. Your final score based on the items you collected is ' + finalScore + '. The maximum score you could have gotten is 45. Thanks for playing ' + user.character + '!';
 
 
 }
@@ -348,7 +354,7 @@ function createUser (){
 	
 	//Welcome the user
 	document.getElementById('outputDiv').innerHTML=
-	'Welcome to ' + user.townName + ', have fun playing our game ' + user.character + '! ' + user.townName + 'is divided intothree sections Uptown, the Shopping District, and Downtown.';
+	'Welcome to ' + user.townName + ', have fun playing our game ' + user.character + '! ' + user.townName + ' is divided into three sections Uptown, the Shopping District, and Downtown.';
  }
  
  //--------------------------------------------------------------------------------------------------
@@ -368,6 +374,15 @@ function mainGame(){
 		clear();
 		return; //leave the main function and wait for another user input
 	}
+	
+	//see if the action is help
+	if(currentAction === 'end'){
+		end(); //run the help function
+		clear();
+		return; //leave the main function and wait for another user input
+	
+	}
+	
 	
 	//see if the action is help
 	if(currentAction === 'help'){
