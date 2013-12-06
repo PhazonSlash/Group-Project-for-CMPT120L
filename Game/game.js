@@ -96,53 +96,53 @@ var Location = function(name, description, items, people, adjacentLocations, key
 
 function createItems(){
 	//Library Items
-	ancientBook = new Item('Ancient Book', 'Wow looks like it is a thousand years old!.', 1, 'ancient', false);
-	hiddenTreasureMap = new Item('Hidden Treasure Map', 'A barely decipherable looking old map.', 1, 'map');
-	bookOnDecipheringCode = new Item('Book on Deciphering Code', 'Black leather bound book. Tons of useless information on breaking codes.', 1, 'code', false);
+	ancientBook = new Item('Ancient Book', 'Wow looks like it is a thousand years old!.', 3, 'ancient', false);
+	hiddenTreasureMap = new Item('Hidden Treasure Map', 'A barely decipherable looking old map.', 5, 'map');
+	bookOnDecipheringCode = new Item('Book on Deciphering Code', 'Black leather bound book. Tons of useless information on breaking codes.', 4, 'code', false);
 	scienceBook = new Item('Science Book', 'Chemistry book.', 1, 'science', false);
 	mathBook = new Item('Math Book', 'Math book on Calculus.', 1, 'math', false);
 
 	//Hotel Items
-	roomKeySet = new Item('Room Key Set', 'A huge ring with keys on it, you can access everyone room in the hotel with this key set.', 1, 'room', false);
+	roomKeySet = new Item('Room Key Set', 'A huge ring with keys on it, you can access everyone room in the hotel with this key set.', 3, 'room', false);
 	luggage = new Item('Luggage', 'A large luggage bag with wheels and Nike Backpack.', 1, 'luggage', false);
 	luggageCart = new Item('Luggage Cart', 'Big rolling luggage cart.', 1, 'cart', false);
 	pillow = new Item('Pillow', 'A real comforatble down pillow.', 1, 'pillow', false);
-	elevatorKey = new Item('Elevator Key', 'A key to turn the elevators on and off.', 1, 'elevator', false);
+	elevatorKey = new Item('Elevator Key', 'A key to turn the elevators on and off.', 3, 'elevator', false);
 
 	//Grocery Store Items
 	shoppingBasket = new Item('Shopping Basket', 'A large basket to fit whatever items you want into it.', 1, 'basket', false);
 	boxOfCereal = new Item('Box of Cereal', 'Frosted mini wheats, sounds like a good breakfast to me.', 1, 'cereal', false);
 	rawSteak = new Item('Raw Steak', 'A delicous porter house steak, find a grill so you can cook a nice meal.', 1, 'steak', false);
-	priceGun = new Item('Price Gun', 'Take this price gun and use it to mark down the prices on groceries.', 1, 'price', false);
-	cashRegister = new Item('Cash Register', 'Full of money, imagine how much this is worth with all the money in it.', 1, 'register', false);
+	priceGun = new Item('Price Gun', 'Take this price gun and use it to mark down the prices on groceries.', 3, 'price', false);
+	cashRegister = new Item('Cash Register', 'Full of money, imagine how much this is worth with all the money in it.', 5, 'register', false);
 
 	//Coffee Shop Items
 	hotCoffee = new Item('Hot Coffee', 'Hot! Be careful!', 1, 'hot', false);
 	icedCoffee = new Item('Iced Coffee', 'Ice cold, perfect for hot days.', 1, 'iced', false);
 	doughnut = new Item('Doughnut', 'Delicous chocalate covered donut, perfect for breakfast.', 1, 'doughnut', false);
 	muffin = new Item('Muffin', 'Yummy chocolate chip muffin, warm right out of the oven.', 1, 'muffin', false);
-	thermos = new Item('Thermos', 'Stainless steel thermos used to keep your coffee hot.', 1, 'thermos', false);
+	thermos = new Item('Thermos', 'Stainless steel thermos used to keep your coffee hot.', 2, 'thermos', false);
 
 	//Hardware Store Items
-	hammer = new Item('Hammer', 'One of the best tools in carpentry, used for many jobs.', 1, 'hammer', false);
-	screwdriver = new Item('Screwdriver', 'You will used this tool for a lot of small jobs.', 1, 'screwdriver', false);
-	wrench = new Item('Wrench', 'Stainless steel adjustable wrench will help you tighten up bolts.', 1, 'wrench', false);
-	shovel = new Item('Shovel', 'Use this to do some digging!', 1, 'shovel', false);
-	saw = new Item('Saw', 'Hand saw that can be used to cut through small items.', 1, 'saw', false);
+	hammer = new Item('Hammer', 'One of the best tools in carpentry, used for many jobs.', 3, 'hammer', false);
+	screwdriver = new Item('Screwdriver', 'You will used this tool for a lot of small jobs.', 2, 'screwdriver', false);
+	wrench = new Item('Wrench', 'Stainless steel adjustable wrench will help you tighten up bolts.', 3, 'wrench', false);
+	shovel = new Item('Shovel', 'Use this to do some digging!', 2, 'shovel', false);
+	saw = new Item('Saw', 'Hand saw that can be used to cut through small items.', 3, 'saw', false);
 
 	//Police Station Items
-	handcuffs = new Item('Handcuffs', 'This is what the officers use to detain the bad guys when arresting them.', 1, 'handcuffs', false);
-	nightstick = new Item('Nightstick', 'One of the items officers always carry with them to subdue crooks.', 1, 'nightstick', false);
-	handcuffKey = new Item('Handcuff Key', 'The key to a set of handcuffs. Hopefully you will never need this', 1, 'key', false);
-	taser = new Item('Taser', 'A very effective tool for self defense.', 1, 'taser', false);
+	handcuffs = new Item('Handcuffs', 'This is what the officers use to detain the bad guys when arresting them.', 2, 'handcuffs', false);
+	nightstick = new Item('Nightstick', 'One of the items officers always carry with them to subdue crooks.', 3, 'nightstick', false);
+	handcuffKey = new Item('Handcuff Key', 'The key to a set of handcuffs. Hopefully you will never need this', 3, 'key', false);
+	taser = new Item('Taser', 'A very effective tool for self defense.', 5, 'taser', false);
 	policeReport = new Item('Police Report', 'This is used to put the arrested ones on file.', 1, 'report', false);
 
 	//Auto Shop Items
 	tire = new Item('Tire', 'You can not drive with out good tires on your vehicle.', 1, 'tire', false);
-	engine = new Item('Engine', 'The engine is the most essential item to operate a car.', 1, 'engine', false);
-	torqueWrench = new Item('Torque Wrench', 'A perfect tool that is great for working on vehicles.', 1, 'wrench', false);
-	carJack = new Item('Car Jack', 'Use this to jack the car up to perform certain work on a vehicle.', 1, 'jack', false);
-	alternator = new Item('Alternator', 'Keeps a charge on your battery and operates the vehicles electrical system.', 1, 'alternator', false);
+	engine = new Item('Engine', 'The engine is the most essential item to operate a car.', 5, 'engine', false);
+	torqueWrench = new Item('Torque Wrench', 'A perfect tool that is great for working on vehicles.', 3, 'wrench', false);
+	carJack = new Item('Car Jack', 'Use this to jack the car up to perform certain work on a vehicle.', 2, 'jack', false);
+	alternator = new Item('Alternator', 'Keeps a charge on your battery and operates the vehicles electrical system.', 2, 'alternator', false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -150,33 +150,33 @@ function createItems(){
 
 function createPeople(){
 	//Library People
-	librarian = new Person('Sally the Librarian','Middle-Aged librarian', 'Welcome to the library! Whatever book, magazine or newspaper you are looking for I bet you can find here.', 'librarian');
-	student = new Person('Student', 'Highschool Student Studying', 'Hey, how are you? This book on Math is really boring. I heard that there was a book that contains a treasure map in this library but I can not find it.', 'student');
+	librarian = new Person('Sally the Librarian','Middle-Aged librarian', 'Welcome to the library! Whatever book, magazine or newspaper you are looking for I bet you can find here. There is even a book on deciphering good and an ancient book which no one knows how old it is!', 'librarian');
+	student = new Person('Student', 'Highschool Student Studying', 'Hey, how are you? This book on Math and book on Science is really boring. I heard that there was a book that contains a treasure map in this library but I can not find it.', 'student');
 
 	//Hotel People
-	bellboy = new Person('Bobby the Bellboy','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel!', 'bellboy');
-	frontDeskHelp = new Person ('Mary at the Front Desk', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here!', 'desk');
+	bellboy = new Person('Bobby the Bellboy','Eighteen year old bell boy', 'Hey! It is a lot of fun exploring everything in this hotel! When I am bored I twirl my room key set and ride the luggage cart through the halls. I also use my elevator key to trap other employees on the elevator as a joke, one that they don\t always find funny.', 'bellboy');
+	frontDeskHelp = new Person ('Mary at the Front Desk', 'A very friendly young lady, who helps all the guests during their stay.', 'Welcome! As you can see we have all the ammenities you need to enjoy your stay here! Any pillow of ours I guarantee is the most comfy pillow you have slept on. Just leave your luggage with us and we can bring it right to your room.', 'frontdesk');
 
 	//Grocery Store People
-	cashier = new Person ('Stephanie the Cashier', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great!', 'cashier');
-	clerk = new Person  ('John the Clerk', 'Deli Manager of the grocery store. A real nice guy to talk to.', 'Hi!', 'clerk');
-	shopper = new Person ('Mrs. Smith the Shopper', 'Crazy older lady always looking for a deal on her groceries.', 'Do you work here! Aren\'t these steaks supposed to be cheaper!?!?', 'shopper');
+	cashier = new Person ('Stephanie the Grocery Store Cashier', '17 year old who is working to buy her first car.', 'I like to shop here with my family when I am not working. The selection of items is great! I also like to play with the price gun and mark any box of cereal that I like to a cheaper price.', 'cashier');
+	clerk = new Person  ('John the Deli Clerk', 'Deli Manager of the grocery store. A real nice guy to talk to.', 'Hi! The raw steak would be in the meat department not here and the cash register is up front. Have a good day now!', 'clerk');
+	shopper = new Person ('Mrs. Smith the Grocery Store Shopper', 'Crazy older lady always looking for a deal on her groceries.', 'Do you work here! Aren\'t these steaks supposed to be cheaper!?!? I am about to leave my shopping basket and go home!', 'shopper');
 
 	//Coffee Shop People
-	employee = new Person ('Ryan the Employee', 'A sweet girl, who may have had too much coffee.', 'Can you figure out what the best item in here is??', 'employee');
-	hipster = new Person ('Anthony the Hipster', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else.', 'hipster');
+	employee = new Person ('Ryan the Coffee Shop Employee', 'A sweet girl, who may have had too much coffee.', 'Can you figure out what my favorite item in here is?? Do you think it\s the Iced Coffee, Hot Coffee, donut, or muffin?', 'employee');
+	hipster = new Person ('Anthony the Hipster', 'Thick black glasses, tight pants, and a coffee in hand.', 'Hey pal, want to sit down and chat I got plenty of time, I\'m not doing anything else. I bring my own thermos of coffee instead of buying what they have here.', 'hipster');
 
 	//Hardware Store People
-	worker = new Person ('Bill the Worker', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here for any home improvement needs you have.', 'worker');
-	contractor = new Person ('Patrick the Contractor', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'What do you think would be best for building a house?(sarcasm)','contractor');
+	worker = new Person ('Bill the Hardware Store Owner', 'Educated in business and took over this hardware store his dad started 34 years ago.', 'Welcome, if you need any help let me know. We have a lot of high quality products here including a hammer, screwdriver, and wrench for any home improvement needs you have.', 'worker');
+	contractor = new Person ('Patrick the Contractor', 'The best contractor in town. Whatever you need fixed he is the guy to do it.', 'Alright lets see I need a new shovel for my wife for her garden and I need a new saw because my old one is too dull now. Well at least this is the right place to get those items!','contractor');
 
 	//Police Station People
-	officer = new Person ('Officer Erika', 'Police woman ready for any duty.', 'Don\'t get in trouble because I have no problem arresting you!', 'officer');
-	crook = new Person ('Steve the Crook', 'Bald with a big beard, who knows what he did this time to land himself in jail.', 'I didn\'t do it, I swear! Hey get those handcuff keys and help me get out of here...no ones looking!', 'crook');
+	officer = new Person ('Officer Erika', 'Police woman ready for any duty.', 'Don\'t get in trouble because I have no problem slapping these handcuffs on you or using my night stick or taser if you resist arrest!', 'officer');
+	crook = new Person ('Steve the Crook', 'Bald with a big beard, who knows what he did this time to land himself in jail.', 'I didn\'t do it, I swear! Hey get those handcuff keys and help me get out of here...no ones looking! Also grab the police report so there is no record of me being arrrested.', 'crook');
 
 	//Auto Shop People
-	mechanic = new Person ('Mike the Mechanic', 'A big guy who knows everything about mechanics.', 'I love working on cars all day long. I do have a lot of items here I do not need though.', 'mechanic');
-	customer = new Person ('Erin the Customer', 'Tall lady with two kids gettting her mini-van fixed.', 'I don\'t know what is wrong with my mini-van. It won\'t start for some reason.', 'customer');
+	mechanic = new Person ('Mike the Mechanic', 'A big guy who knows everything about mechanics.', 'I love working on cars all day long. I can do anything as little as change a tire, changing and alternator, or swithcing out an engine.', 'mechanic');
+	customer = new Person ('Erin the Customer', 'Tall lady with two kids gettting her mini-van fixed.', 'I don\'t know what is wrong with my mini-van. It won\'t start for some reason. He said all he needed to do was get the car jack underneath it and use the torque wrench to do something....I don\t know what he is talking about but as long as he fixes it I will be happy.', 'customer');
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -348,7 +348,7 @@ function createUser (){
 	
 	//Welcome the user
 	document.getElementById('outputDiv').innerHTML=
-	'Welcome to ' + user.townName + ', have fun playing our game ' + user.character + '!';
+	'Welcome to ' + user.townName + ', have fun playing our game ' + user.character + '! ' + user.townName + 'is divided intothree sections Uptown, the Shopping District, and Downtown.';
  }
  
  //--------------------------------------------------------------------------------------------------
